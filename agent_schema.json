@@ -1,0 +1,77 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Device Control API",
+      "version": "1.0.0",
+      "description": "API for controlling devices via IoT topics"
+    },
+    "paths": {
+      "/control-device": {
+        "post": {
+          "summary": "Control a device",
+          "description": "Trigger a Lambda function to turn a device on or off via an IoT topic",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeviceControlRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DeviceControlResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "DeviceControlRequest": {
+          "type": "object",
+          "required": [
+            "deviceId",
+            "action"
+          ],
+          "properties": {
+            "deviceId": {
+              "type": "string",
+              "description": "Unique identifier for the device"
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "turnOn",
+                "turnOff"
+              ],
+              "description": "Action to perform on the device"
+            }
+          }
+        },
+        "DeviceControlResponse": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "description": "Status of the device control operation"
+            },
+            "message": {
+              "type": "string",
+              "description": "Additional message about the operation"
+            }
+          }
+        }
+      }
+    }
+  }
+  
