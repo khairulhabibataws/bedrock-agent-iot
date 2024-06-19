@@ -1,0 +1,27 @@
+# Compiled source files
+*.pyc
+*.pyo
+*.pyd
+<strong>pycache</strong>/<p></p>
+<h1>Logs and databases</h1>
+<p>*.log
+*.sql
+*.sqlite</p>
+<h1>Virtual environments</h1>
+<p>env/
+venv/
+.venv/
+.env</p>
+<h1>Compiled output</h1>
+<p>dist/
+tmp/
+res/
+out-tsc/
+bazel-out/</p>
+<h1>Node</h1>
+<p>node_modules/
+npm-debug.log
+yarn-error.log</p>
+<h1>Mac OS</h1>
+<p>.DS_Store</p>
+<h1>IDE files</h1>
